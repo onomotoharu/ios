@@ -7,18 +7,45 @@
 //
 
 #import "AppDelegate.h"
-
+#import "TopViewController.h"
+#import "UIColor+Hex.h"
 @interface AppDelegate ()
-
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:[[TopViewController alloc]init]];
+    self.window.rootViewController = navController;
+    self.window.backgroundColor = [UIColor colorWithHex:@"94BFD0"];
+    [self.window makeKeyAndVisible];
+    
+    [self loadQuizdataJson];
+
     // Override point for customization after application launch.
     return YES;
 }
+
+
+-(void)loadQuizdataJson{
+    NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:@"quizdata" ofType:@"json"];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:jsonFilePath])
+    {
+        return;
+    }
+    
+    NSData *jsonData = [NSData dataWithContentsOfFile:jsonFilePath];
+    
+    NSError *error;
+    _quizData = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                options:NSJSONReadingAllowFragments
+                                                  error:&error];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		8FB2C9CC1B0EC6CB00BBAB6F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB2C9CB1B0EC6CB00BBAB6F /* main.m */; };
 		8FB2C9CF1B0EC6CB00BBAB6F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB2C9CE1B0EC6CB00BBAB6F /* AppDelegate.m */; };
-		8FB2C9D21B0EC6CB00BBAB6F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB2C9D11B0EC6CB00BBAB6F /* ViewController.m */; };
 		8FB2C9D51B0EC6CB00BBAB6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FB2C9D31B0EC6CB00BBAB6F /* Main.storyboard */; };
 		8FB2C9D71B0EC6CB00BBAB6F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FB2C9D61B0EC6CB00BBAB6F /* Images.xcassets */; };
 		8FB2C9DA1B0EC6CB00BBAB6F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FB2C9D81B0EC6CB00BBAB6F /* LaunchScreen.xib */; };
 		8FB2C9E61B0EC6CB00BBAB6F /* iOS_unit_challengeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FB2C9E51B0EC6CB00BBAB6F /* iOS_unit_challengeTests.m */; };
+		8FFC7FDF1B0ED34E003A3AFB /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFC7FDE1B0ED34E003A3AFB /* TopViewController.m */; };
+		8FFC7FE21B0ED696003A3AFB /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFC7FE11B0ED696003A3AFB /* UIColor+Hex.m */; };
+		8FFC7FE51B0EE492003A3AFB /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFC7FE41B0EE492003A3AFB /* QuizViewController.m */; };
+		8FFC7FE71B0EED75003A3AFB /* quizdata.json in Resources */ = {isa = PBXBuildFile; fileRef = 8FFC7FE61B0EED75003A3AFB /* quizdata.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +35,19 @@
 		8FB2C9CB1B0EC6CB00BBAB6F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8FB2C9CD1B0EC6CB00BBAB6F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8FB2C9CE1B0EC6CB00BBAB6F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8FB2C9D01B0EC6CB00BBAB6F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8FB2C9D11B0EC6CB00BBAB6F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8FB2C9D41B0EC6CB00BBAB6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8FB2C9D61B0EC6CB00BBAB6F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8FB2C9D91B0EC6CB00BBAB6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8FB2C9DF1B0EC6CB00BBAB6F /* iOS_unit_challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_unit_challengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FB2C9E41B0EC6CB00BBAB6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FB2C9E51B0EC6CB00BBAB6F /* iOS_unit_challengeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_unit_challengeTests.m; sourceTree = "<group>"; };
+		8FFC7FDD1B0ED34E003A3AFB /* TopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopViewController.h; sourceTree = "<group>"; };
+		8FFC7FDE1B0ED34E003A3AFB /* TopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopViewController.m; sourceTree = "<group>"; };
+		8FFC7FE01B0ED696003A3AFB /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		8FFC7FE11B0ED696003A3AFB /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		8FFC7FE31B0EE492003A3AFB /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizViewController.h; sourceTree = "<group>"; };
+		8FFC7FE41B0EE492003A3AFB /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
+		8FFC7FE61B0EED75003A3AFB /* quizdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quizdata.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,7 @@
 		8FB2C9BD1B0EC6CB00BBAB6F = {
 			isa = PBXGroup;
 			children = (
+				8FFC7FE61B0EED75003A3AFB /* quizdata.json */,
 				8FB2C9C81B0EC6CB00BBAB6F /* iOS_unit_challenge */,
 				8FB2C9E21B0EC6CB00BBAB6F /* iOS_unit_challengeTests */,
 				8FB2C9C71B0EC6CB00BBAB6F /* Products */,
@@ -83,12 +92,16 @@
 			children = (
 				8FB2C9CD1B0EC6CB00BBAB6F /* AppDelegate.h */,
 				8FB2C9CE1B0EC6CB00BBAB6F /* AppDelegate.m */,
-				8FB2C9D01B0EC6CB00BBAB6F /* ViewController.h */,
-				8FB2C9D11B0EC6CB00BBAB6F /* ViewController.m */,
 				8FB2C9D31B0EC6CB00BBAB6F /* Main.storyboard */,
 				8FB2C9D61B0EC6CB00BBAB6F /* Images.xcassets */,
 				8FB2C9D81B0EC6CB00BBAB6F /* LaunchScreen.xib */,
 				8FB2C9C91B0EC6CB00BBAB6F /* Supporting Files */,
+				8FFC7FDD1B0ED34E003A3AFB /* TopViewController.h */,
+				8FFC7FDE1B0ED34E003A3AFB /* TopViewController.m */,
+				8FFC7FE01B0ED696003A3AFB /* UIColor+Hex.h */,
+				8FFC7FE11B0ED696003A3AFB /* UIColor+Hex.m */,
+				8FFC7FE31B0EE492003A3AFB /* QuizViewController.h */,
+				8FFC7FE41B0EE492003A3AFB /* QuizViewController.m */,
 			);
 			path = iOS_unit_challenge;
 			sourceTree = "<group>";
@@ -199,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FFC7FE71B0EED75003A3AFB /* quizdata.json in Resources */,
 				8FB2C9D51B0EC6CB00BBAB6F /* Main.storyboard in Resources */,
 				8FB2C9DA1B0EC6CB00BBAB6F /* LaunchScreen.xib in Resources */,
 				8FB2C9D71B0EC6CB00BBAB6F /* Images.xcassets in Resources */,
@@ -219,9 +233,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FB2C9D21B0EC6CB00BBAB6F /* ViewController.m in Sources */,
+				8FFC7FDF1B0ED34E003A3AFB /* TopViewController.m in Sources */,
+				8FFC7FE21B0ED696003A3AFB /* UIColor+Hex.m in Sources */,
 				8FB2C9CF1B0EC6CB00BBAB6F /* AppDelegate.m in Sources */,
 				8FB2C9CC1B0EC6CB00BBAB6F /* main.m in Sources */,
+				8FFC7FE51B0EE492003A3AFB /* QuizViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +366,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOS_unit_challenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -360,6 +377,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOS_unit_challenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -418,6 +436,7 @@
 				8FB2C9EB1B0EC6CB00BBAB6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8FB2C9EC1B0EC6CB00BBAB6F /* Build configuration list for PBXNativeTarget "iOS_unit_challengeTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +445,7 @@
 				8FB2C9EE1B0EC6CB00BBAB6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

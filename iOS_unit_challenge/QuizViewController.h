@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  QuizViewController.h
 //  iOS_unit_challenge
 //
 //  Created by 小野 元春 on 2015/05/22.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface QuizViewController : UIViewController
 
 @end
-
