@@ -26,12 +26,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc]
+                                      initWithTitle:@"📲"
+                                      style:UIBarButtonItemStylePlain
+                                      target:self
+                                      action:@selector(quit)];
+    self.navigationItem.leftBarButtonItem = anotherButton;
+    
     UILabel *title = [[UILabel alloc]init];
     title.frame = CGRectMake(40,100,SCREEN_WIDTH-80,100);
     title.textColor = [UIColor colorWithHex:@"F1CD6C"];
     title.font = DEFAULT_FONT;
     title.textAlignment =  NSTextAlignmentCenter;
-    title.text = @"QuizTime";
+    title.text = @"QuizTime😎";
     [self.view addSubview:title];
     
     _segueButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -61,8 +69,12 @@
 
 -(void)segueTransition{
     QuizViewController *qv = [[QuizViewController alloc]init];
-    [qv setStage:@1];
+    [qv setStage:@0];
     [self.navigationController pushViewController:qv animated:YES];
+}
+
+-(void)quit{
+    exit(1);
 }
 
 

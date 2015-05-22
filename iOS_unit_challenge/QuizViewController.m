@@ -17,11 +17,15 @@
 @interface QuizViewController ()
 @end
 
-@implementation QuizViewController
+@implementation QuizViewController{
+    AppDelegate *ad;
+}
 @synthesize stage;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    ad = [UIApplication sharedApplication].delegate;
 
     [self.navigationItem setHidesBackButton:YES animated:YES];
 
@@ -36,9 +40,7 @@
 
 -(void)prepareQuiz{
     //タイトル
-    AppDelegate *ad = [UIApplication sharedApplication].delegate;
-    
-    self.title = [NSString stringWithFormat:@"第%@問",stage];
+    self.title = [NSString stringWithFormat:@"第%d問",stage.intValue+1];
 
     //問題文
     UITextView *question = [[UITextView alloc]initWithFrame:CGRectMake(40, 100, SCREEN_WIDTH-80, 250)];
@@ -49,17 +51,11 @@
     question.editable = NO;
     question.text = [ad.quizData[stage.intValue] objectForKey:@"question"];
     [self.view addSubview:question];
-    
-    
-    
 
-    NSString *hoge = [ad.quizData[stage.intValue] objectForKey:@"selection"][1];
     
-    NSLog(@"%@",hoge);
-    
-    //ボタン
-    
+    //解答ボタン1
     UIButton *choiceOne = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    choiceOne.tag = 0;
     choiceOne.frame = CGRectMake(0, SCREEN_HEIGHT-300, SCREEN_WIDTH, 50);
     NSString *questionSentenceOne = [ad.quizData[stage.intValue] objectForKey:@"selection"][0][0];
     
@@ -68,12 +64,12 @@
     [choiceOne setBackgroundColor:[UIColor colorWithHex:@"F3DDC2"] ];
     choiceOne.titleLabel.font = DEFAULT_FONT;
     [ choiceOne addTarget:self
-                   action:@selector(test)
+                   action:@selector(ans:)
          forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:choiceOne];
-
-//    
+    //解答ボタン2
     UIButton *choiceTwo = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    choiceTwo.tag = 1;
     choiceTwo.frame = CGRectMake(0, SCREEN_HEIGHT-250, SCREEN_WIDTH, 50);
     NSString *questionSentenceTwo = [ad.quizData[stage.intValue] objectForKey:@"selection"][1][0];
     
@@ -82,11 +78,12 @@
     [choiceTwo setBackgroundColor:[UIColor colorWithHex:@"EDAB40"] ];
     choiceTwo.titleLabel.font = DEFAULT_FONT;
     [ choiceTwo addTarget:self
-                   action:@selector(test)
+                   action:@selector(ans:)
          forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:choiceTwo];
-//    
+    //解答ボタン3
     UIButton *choiceThree = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    choiceThree.tag = 2;
     choiceThree.frame = CGRectMake(0, SCREEN_HEIGHT-200, SCREEN_WIDTH, 50);
     NSString *questionSentenceThree = [ad.quizData[stage.intValue] objectForKey:@"selection"][2][0];
     
@@ -95,11 +92,12 @@
     [choiceThree setBackgroundColor:[UIColor colorWithHex:@"6296A7"] ];
     choiceThree.titleLabel.font = DEFAULT_FONT;
     [ choiceThree addTarget:self
-                     action:@selector(test)
+                     action:@selector(ans:)
            forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:choiceThree];
-//
+    //解答ボタン4
     UIButton *choiceFour = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    choiceFour.tag = 3;
     choiceFour.frame = CGRectMake(0, SCREEN_HEIGHT-150, SCREEN_WIDTH, 50);
     NSString *questionSentenceFour = [ad.quizData[stage.intValue] objectForKey:@"selection"][3][0];
     
@@ -108,17 +106,33 @@
     [choiceFour setBackgroundColor:[UIColor colorWithHex:@"F1CD6C"] ];
     choiceFour.titleLabel.font = DEFAULT_FONT;
     [ choiceFour addTarget:self
-                    action:@selector(test)
+                    action:@selector(ans:)
           forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:choiceFour];
-    
-    
 }
 
--(void)test{
-    
+
+-(void) ans : (id) sender{
+    UIButton *clicked = (UIButton *) sender;
+    NSNumber *resultBool = [ad.quizData[stage.intValue] objectForKey:@"selection"][clicked.tag][1];
+
+    if (resultBool.intValue){
+        NSLog(@"yes");
+    }else {
+        NSLog(@"false");
+    }
+    [self showTFMark:resultBool];
 }
 
+-(void)showTFMark: (NSNumber*)resultBool{
+    UILabel *mark = [[UILabel alloc]init];
+    mark.frame = CGRectMake(40,200,SCREEN_WIDTH-80,200);
+    mark.textColor = [UIColor colorWithHex:@"F1CD6C"];
+    mark.font = [UIFont fontWithName:@"Helvetica" size:250];
+    mark.textAlignment =  NSTextAlignmentCenter;
+    mark.text = @"⭕️";
+    [self.view addSubview:mark];
+}
 
 /*
 #pragma mark - Navigation
