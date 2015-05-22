@@ -59,7 +59,9 @@
 }
 
 -(void)segueTransition{
-    [self.navigationController pushViewController:[[QuizViewController alloc]init] animated:YES];
+    QuizViewController *qv = [[QuizViewController alloc]init];
+    [qv setStage:@1];
+    [self.navigationController pushViewController:qv animated:YES];
 }
 
 

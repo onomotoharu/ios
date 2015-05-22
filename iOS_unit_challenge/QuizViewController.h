@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface QuizViewController : UIViewController
-
+@property (nonatomic,copy) NSNumber *stage;
 @end
