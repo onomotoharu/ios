@@ -19,6 +19,7 @@
 		8FFC7FE71B0EED75003A3AFB /* quizdata.json in Resources */ = {isa = PBXBuildFile; fileRef = 8FFC7FE61B0EED75003A3AFB /* quizdata.json */; };
 		8FFC7FEA1B0F2102003A3AFB /* false.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFC7FE81B0F2102003A3AFB /* false.png */; };
 		8FFC7FEB1B0F2102003A3AFB /* true.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFC7FE91B0F2102003A3AFB /* true.png */; };
+		8FFC7FEE1B0F2ECA003A3AFB /* CommentaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFC7FED1B0F2ECA003A3AFB /* CommentaryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		8FFC7FE61B0EED75003A3AFB /* quizdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quizdata.json; sourceTree = "<group>"; };
 		8FFC7FE81B0F2102003A3AFB /* false.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = false.png; sourceTree = "<group>"; };
 		8FFC7FE91B0F2102003A3AFB /* true.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = true.png; sourceTree = "<group>"; };
+		8FFC7FEC1B0F2ECA003A3AFB /* CommentaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentaryViewController.h; sourceTree = "<group>"; };
+		8FFC7FED1B0F2ECA003A3AFB /* CommentaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentaryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +111,8 @@
 				8FFC7FE11B0ED696003A3AFB /* UIColor+Hex.m */,
 				8FFC7FE31B0EE492003A3AFB /* QuizViewController.h */,
 				8FFC7FE41B0EE492003A3AFB /* QuizViewController.m */,
+				8FFC7FEC1B0F2ECA003A3AFB /* CommentaryViewController.h */,
+				8FFC7FED1B0F2ECA003A3AFB /* CommentaryViewController.m */,
 			);
 			path = iOS_unit_challenge;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 				8FB2C9CF1B0EC6CB00BBAB6F /* AppDelegate.m in Sources */,
 				8FB2C9CC1B0EC6CB00BBAB6F /* main.m in Sources */,
 				8FFC7FE51B0EE492003A3AFB /* QuizViewController.m in Sources */,
+				8FFC7FEE1B0F2ECA003A3AFB /* CommentaryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

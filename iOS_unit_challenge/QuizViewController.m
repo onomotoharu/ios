@@ -9,6 +9,7 @@
 #import "QuizViewController.h"
 #import "AppDelegate.h"
 #import "UIColor+Hex.h"
+#import "CommentaryViewController.h"
 
 #define DEFAULT_FONT [UIFont fontWithName:@"Helvetica" size:25]   //標準のフォントを指定
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width      //画面の幅を取得
@@ -137,7 +138,9 @@
     
     NSNumber *resultBool = [ad.quizData[stage.intValue] objectForKey:@"selection"][clicked.tag][1];
     
-    ad.userAnswered = [ad.userAnswered arrayByAddingObject:resultBool];
+    ad.userAnswered[stage.intValue] = resultBool;
+    
+    NSLog(@"%@",ad.userAnswered);
     
     if (resultBool.intValue){
         NSLog(@"yes");
@@ -173,7 +176,7 @@
         [qv setStage: [NSNumber numberWithInt:stage.intValue+1]];
         [self.navigationController pushViewController:qv animated:YES];
     }else{
-        [self backToRoot];
+        [self.navigationController pushViewController:[[CommentaryViewController alloc]init] animated:YES];
     }
 }
 

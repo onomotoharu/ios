@@ -24,8 +24,12 @@
     
     [self loadQuizdataJson];
 
-    _userAnswered = @[];
-    // Override point for customization after application launch.
+    _userAnswered = [@[] mutableCopy];
+
+    for(int i = 0; i < (int)[_quizData count]; i++) {
+        [_userAnswered addObject:@2];
+    }
+    
     return YES;
 }
 
