@@ -26,7 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+
+    //終了ボタン
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc]
                                       initWithTitle:@"📲"
                                       style:UIBarButtonItemStylePlain
@@ -34,10 +35,11 @@
                                       action:@selector(quit)];
     self.navigationItem.leftBarButtonItem = anotherButton;
     
+    
     UILabel *title = [[UILabel alloc]init];
     title.frame = CGRectMake(40,100,SCREEN_WIDTH-80,100);
     title.textColor = [UIColor colorWithHex:@"F1CD6C"];
-    title.font = DEFAULT_FONT;
+    title.font = [UIFont fontWithName:@"Helvetica" size:50];
     title.textAlignment =  NSTextAlignmentCenter;
     title.text = @"QuizTime😎";
     [self.view addSubview:title];

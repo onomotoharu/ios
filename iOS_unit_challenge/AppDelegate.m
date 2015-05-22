@@ -24,6 +24,7 @@
     
     [self loadQuizdataJson];
 
+    _userAnswered = @[];
     // Override point for customization after application launch.
     return YES;
 }

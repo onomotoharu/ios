@@ -11,5 +11,6 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic,retain) NSArray *quizData;
+@property (nonatomic,retain) NSArray *userAnswered;
 @end
 

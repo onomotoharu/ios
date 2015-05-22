@@ -19,17 +19,31 @@
 
 @implementation QuizViewController{
     AppDelegate *ad;
+    UIButton *choiceOne;
+    UIButton *choiceTwo;
+    UIButton *choiceThree;
+    UIButton *choiceFour;
 }
 @synthesize stage;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    //AppDelegateによるあたいの共有用
     ad = [UIApplication sharedApplication].delegate;
+    
 
+    //メニューバーのボタンの追加・削除
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc]
+                                      initWithTitle:@"😢"
+                                      style:UIBarButtonItemStylePlain
+                                      target:self
+                                      action:@selector(backToRoot)];
+    self.navigationItem.leftBarButtonItem = anotherButton;
     [self.navigationItem setHidesBackButton:YES animated:YES];
 
     self.view.backgroundColor = [UIColor colorWithHex:@"22508B"];
+    
+    //問題文などの用意
     [self prepareQuiz];
 }
 
@@ -54,7 +68,7 @@
 
     
     //解答ボタン1
-    UIButton *choiceOne = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    choiceOne = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     choiceOne.tag = 0;
     choiceOne.frame = CGRectMake(0, SCREEN_HEIGHT-300, SCREEN_WIDTH, 50);
     NSString *questionSentenceOne = [ad.quizData[stage.intValue] objectForKey:@"selection"][0][0];
@@ -68,7 +82,7 @@
          forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:choiceOne];
     //解答ボタン2
-    UIButton *choiceTwo = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    choiceTwo = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     choiceTwo.tag = 1;
     choiceTwo.frame = CGRectMake(0, SCREEN_HEIGHT-250, SCREEN_WIDTH, 50);
     NSString *questionSentenceTwo = [ad.quizData[stage.intValue] objectForKey:@"selection"][1][0];
@@ -82,7 +96,7 @@
          forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:choiceTwo];
     //解答ボタン3
-    UIButton *choiceThree = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    choiceThree = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     choiceThree.tag = 2;
     choiceThree.frame = CGRectMake(0, SCREEN_HEIGHT-200, SCREEN_WIDTH, 50);
     NSString *questionSentenceThree = [ad.quizData[stage.intValue] objectForKey:@"selection"][2][0];
@@ -96,7 +110,7 @@
            forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:choiceThree];
     //解答ボタン4
-    UIButton *choiceFour = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    choiceFour = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     choiceFour.tag = 3;
     choiceFour.frame = CGRectMake(0, SCREEN_HEIGHT-150, SCREEN_WIDTH, 50);
     NSString *questionSentenceFour = [ad.quizData[stage.intValue] objectForKey:@"selection"][3][0];
@@ -113,25 +127,60 @@
 
 
 -(void) ans : (id) sender{
+    //解答した時点で全てのボタンを無効に
+    choiceOne.enabled = NO;
+    choiceTwo.enabled = NO;
+    choiceThree.enabled = NO;
+    choiceFour.enabled = NO;
+    
     UIButton *clicked = (UIButton *) sender;
+    
     NSNumber *resultBool = [ad.quizData[stage.intValue] objectForKey:@"selection"][clicked.tag][1];
-
+    
+    ad.userAnswered = [ad.userAnswered arrayByAddingObject:resultBool];
+    
     if (resultBool.intValue){
         NSLog(@"yes");
     }else {
         NSLog(@"false");
     }
     [self showTFMark:resultBool];
+    
 }
 
+//あっているかどうかのマークを表示
 -(void)showTFMark: (NSNumber*)resultBool{
-    UILabel *mark = [[UILabel alloc]init];
-    mark.frame = CGRectMake(40,200,SCREEN_WIDTH-80,200);
-    mark.textColor = [UIColor colorWithHex:@"F1CD6C"];
-    mark.font = [UIFont fontWithName:@"Helvetica" size:250];
-    mark.textAlignment =  NSTextAlignmentCenter;
-    mark.text = @"⭕️";
+    UIImage *image = [UIImage imageNamed: (resultBool.intValue)? @"true.png" : @"false.png"];
+
+    
+    UIImageView *mark = [[UIImageView alloc]initWithImage:image];
+    mark.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+    
+    //フェードして完了したら次の画面へ
     [self.view addSubview:mark];
+    [UIView animateWithDuration:1.4f
+                     animations:^(void){
+                         mark.alpha = 0;
+                     } completion:^(BOOL finished){
+                         [self goToNextView];
+                     }];
+}
+
+
+-(void)goToNextView{
+    if(stage.intValue < 4){
+        QuizViewController *qv = [[QuizViewController alloc]init];
+        [qv setStage: [NSNumber numberWithInt:stage.intValue+1]];
+        [self.navigationController pushViewController:qv animated:YES];
+    }else{
+        [self backToRoot];
+    }
+}
+
+
+//トップ画面にもどる
+-(void)backToRoot{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 /*

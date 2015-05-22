@@ -17,6 +17,8 @@
 		8FFC7FE21B0ED696003A3AFB /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFC7FE11B0ED696003A3AFB /* UIColor+Hex.m */; };
 		8FFC7FE51B0EE492003A3AFB /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFC7FE41B0EE492003A3AFB /* QuizViewController.m */; };
 		8FFC7FE71B0EED75003A3AFB /* quizdata.json in Resources */ = {isa = PBXBuildFile; fileRef = 8FFC7FE61B0EED75003A3AFB /* quizdata.json */; };
+		8FFC7FEA1B0F2102003A3AFB /* false.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFC7FE81B0F2102003A3AFB /* false.png */; };
+		8FFC7FEB1B0F2102003A3AFB /* true.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FFC7FE91B0F2102003A3AFB /* true.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		8FFC7FE31B0EE492003A3AFB /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizViewController.h; sourceTree = "<group>"; };
 		8FFC7FE41B0EE492003A3AFB /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
 		8FFC7FE61B0EED75003A3AFB /* quizdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quizdata.json; sourceTree = "<group>"; };
+		8FFC7FE81B0F2102003A3AFB /* false.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = false.png; sourceTree = "<group>"; };
+		8FFC7FE91B0F2102003A3AFB /* true.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = true.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 		8FB2C9BD1B0EC6CB00BBAB6F = {
 			isa = PBXGroup;
 			children = (
+				8FFC7FE81B0F2102003A3AFB /* false.png */,
+				8FFC7FE91B0F2102003A3AFB /* true.png */,
 				8FFC7FE61B0EED75003A3AFB /* quizdata.json */,
 				8FB2C9C81B0EC6CB00BBAB6F /* iOS_unit_challenge */,
 				8FB2C9E21B0EC6CB00BBAB6F /* iOS_unit_challengeTests */,
@@ -216,6 +222,8 @@
 				8FB2C9D51B0EC6CB00BBAB6F /* Main.storyboard in Resources */,
 				8FB2C9DA1B0EC6CB00BBAB6F /* LaunchScreen.xib in Resources */,
 				8FB2C9D71B0EC6CB00BBAB6F /* Images.xcassets in Resources */,
+				8FFC7FEA1B0F2102003A3AFB /* false.png in Resources */,
+				8FFC7FEB1B0F2102003A3AFB /* true.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,7 +372,7 @@
 		8FB2C9EA1B0EC6CB00BBAB6F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				INFOPLIST_FILE = iOS_unit_challenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -375,7 +383,7 @@
 		8FB2C9EB1B0EC6CB00BBAB6F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				INFOPLIST_FILE = iOS_unit_challenge/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
