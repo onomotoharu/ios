@@ -28,7 +28,7 @@
     
     UILabel *title = [[UILabel alloc]init];
     title.frame = CGRectMake(40,100,SCREEN_WIDTH-80,100);
-    title.textColor = [UIColor whiteColor];
+    title.textColor = [UIColor colorWithHex:@"F1CD6C"];
     title.font = DEFAULT_FONT;
     title.textAlignment =  NSTextAlignmentCenter;
     title.text = @"QuizTime";
@@ -38,12 +38,13 @@
     _segueButton.frame = CGRectMake(40, 400, SCREEN_WIDTH-80, 50);
     [_segueButton setTitle:@"START" forState:UIControlStateNormal];
     _segueButton.titleLabel.font = DEFAULT_FONT;
-    _segueButton.titleLabel.textColor = [UIColor colorWithHex:@"FFFFFF"];
-    _segueButton.backgroundColor = [UIColor colorWithHex:@"193073"];
+    [_segueButton setTitleColor:[UIColor colorWithHex:@"F3DDC2"] forState:UIControlStateNormal];
+    _segueButton.backgroundColor = [UIColor colorWithHex:@"EDAB40"];
     [_segueButton addTarget:self
                      action:@selector(segueTransition)
            forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_segueButton];
+    
 
     
     // Do any additional setup after loading the view.

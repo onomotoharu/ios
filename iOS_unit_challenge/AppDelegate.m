@@ -19,7 +19,7 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:[[TopViewController alloc]init]];
     self.window.rootViewController = navController;
-    self.window.backgroundColor = [UIColor colorWithHex:@"94BFD0"];
+    self.window.backgroundColor = [UIColor colorWithHex:@"22508B"];
     [self.window makeKeyAndVisible];
     
     [self loadQuizdataJson];
