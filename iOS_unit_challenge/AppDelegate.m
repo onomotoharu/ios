@@ -46,9 +46,9 @@
     NSData *jsonData = [NSData dataWithContentsOfFile:jsonFilePath];
     
     NSError *error;
-    _quizData = [NSJSONSerialization JSONObjectWithData:jsonData
+    _quizData = [[NSJSONSerialization JSONObjectWithData:jsonData
                                                 options:NSJSONReadingAllowFragments
-                                                  error:&error];
+                                                  error:&error] mutableCopy];
 }
 
 

@@ -9,6 +9,7 @@
 #import "TopViewController.h"
 #import "UIColor+Hex.h"
 #import "QuizViewController.h"
+#import "AppDelegate.h"
 
 #define DEFAULT_FONT [UIFont fontWithName:@"Helvetica" size:25]   //標準のフォントを指定
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width      //画面の幅を取得
@@ -51,7 +52,7 @@
     [_segueButton setTitleColor:[UIColor colorWithHex:@"F3DDC2"] forState:UIControlStateNormal];
     _segueButton.backgroundColor = [UIColor colorWithHex:@"EDAB40"];
     [_segueButton addTarget:self
-                     action:@selector(segueTransition)
+                     action:@selector(goToQuiz)
            forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_segueButton];
     
@@ -69,7 +70,15 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
--(void)segueTransition{
+-(void)goToQuiz{
+    
+    AppDelegate *ad = [UIApplication sharedApplication].delegate;
+    int count = (int)[ad.quizData count];
+    for (int i = count - 1; i > 0; i--) {
+        int randomNum = arc4random() % i;
+        [ad.quizData exchangeObjectAtIndex:i withObjectAtIndex:randomNum];
+    }
+    
     QuizViewController *qv = [[QuizViewController alloc]init];
     [qv setStage:@0];
     [self.navigationController pushViewController:qv animated:YES];
