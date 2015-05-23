@@ -81,7 +81,6 @@
     question.text = [ad.quizData[stage.intValue] objectForKey:@"question"];
     [self.view addSubview:question];
 
-    
     //解答ボタン1
     choiceOne = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     choiceOne.tag = 0;
@@ -138,6 +137,9 @@
                     action:@selector(ans:)
           forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:choiceFour];
+    
+    
+    
     
     //残り時間
     progressView = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleDefault];
