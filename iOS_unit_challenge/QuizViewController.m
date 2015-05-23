@@ -153,17 +153,19 @@
 
 //あっているかどうかのマークを表示
 -(void)showTFMark: (NSNumber*)resultBool{
-    UIImage *image = [UIImage imageNamed: (resultBool.intValue)? @"true.png" : @"false.png"];
-
-    
-    UIImageView *mark = [[UIImageView alloc]initWithImage:image];
-    mark.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+    UILabel *title = [[UILabel alloc]init];
+    title.center = CGPointMake(SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+    title.frame = CGRectMake(40,100,SCREEN_WIDTH-80,300);
+    title.textColor = [UIColor colorWithHex:@"DC143C"];
+    title.font = [UIFont fontWithName:@"Helvetica" size:150];
+    title.textAlignment =  NSTextAlignmentCenter;
+    title.text = resultBool.intValue? @"✓" : @"✗";
+    [self.view addSubview:title];
     
     //フェードして完了したら次の画面へ
-    [self.view addSubview:mark];
     [UIView animateWithDuration:1.4f
                      animations:^(void){
-                         mark.alpha = 0;
+                         title.alpha = 0;
                      } completion:^(BOOL finished){
                          [self goToNextView];
                      }];

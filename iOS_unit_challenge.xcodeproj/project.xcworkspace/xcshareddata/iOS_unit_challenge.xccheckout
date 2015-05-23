@@ -7,18 +7,18 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>F5DDBD78-6E4E-4285-8A52-480952B155B8</string>
 	<key>IDESourceControlProjectName</key>
-	<string>iOS_unit_challenge</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>88F9DEB03A0D4BA891FB241AD4EBEAC3DD5E34AA</key>
 		<string>http://172.19.214.210:8080/gitbucket/git/onomotoharu/iOS_unit_challenge.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iOS_unit_challenge.xcodeproj</string>
+	<string>iOS_unit_challenge.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>88F9DEB03A0D4BA891FB241AD4EBEAC3DD5E34AA</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>http://172.19.214.210:8080/gitbucket/git/onomotoharu/iOS_unit_challenge.git</string>
@@ -34,7 +34,15 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>88F9DEB03A0D4BA891FB241AD4EBEAC3DD5E34AA</string>
 			<key>IDESourceControlWCCName</key>
-			<string>iOS_unit_challenge</string>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>88F9DEB03A0D4BA891FB241AD4EBEAC3DD5E34AA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iosunit</string>
 		</dict>
 	</array>
 </dict>
