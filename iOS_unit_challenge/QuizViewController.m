@@ -68,8 +68,6 @@
         int randomNum = arc4random() % i;
         [questionStmt exchangeObjectAtIndex:i withObjectAtIndex:randomNum];
     }
-//
-    
     
     //問題文
     UITextView *question = [[UITextView alloc]initWithFrame:CGRectMake(40, 100, SCREEN_WIDTH-80, 250)];
@@ -173,13 +171,6 @@
     
     ad.userAnswered[stage.intValue] = resultBool;
     
-    NSLog(@"%@",ad.userAnswered);
-    
-    if (resultBool.intValue){
-        NSLog(@"yes");
-    }else {
-        NSLog(@"false");
-    }
     [self showTFMark:resultBool];
     
 }
@@ -211,7 +202,47 @@
         [qv setStage: [NSNumber numberWithInt:stage.intValue+1]];
         [self.navigationController pushViewController:qv animated:YES];
     }else{
-        [self goToCommentaryView];
+        
+        
+        int q = (int)[ad.userAnswered count];
+        
+        
+        int correct = 0;
+        for (int i = 0; i < q ; i++) {
+            if ([ad.userAnswered[i] isEqual:@1]) {
+                correct++;
+            }
+        }
+        
+        UIAlertController * ac =
+        [UIAlertController alertControllerWithTitle:[NSString stringWithFormat: @"%d問中%d問正解!",q,correct]
+                                            message:[NSString stringWithFormat:@"正答率%d%%",(correct*100)/q]
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        
+        // Cancel用のアクションを生成
+        UIAlertAction * cancelAction =
+        [UIAlertAction actionWithTitle:@"トップへ戻る"
+                                 style:UIAlertActionStyleCancel
+                               handler:^(UIAlertAction * action) {
+                                   [self.navigationController popToRootViewControllerAnimated:YES];
+                               }];
+        
+        // OK用のアクションを生成
+        UIAlertAction * okAction =
+        [UIAlertAction actionWithTitle:@"解説へ"
+                                 style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action) {
+                                   [self goToCommentaryView];
+                               }];
+        
+        // コントローラにアクションを追加
+        [ac addAction:cancelAction];
+        [ac addAction:okAction];
+        
+        // アラート表示処理
+        [self presentViewController:ac animated:YES completion:nil];
+        
+        
     }
 }
 

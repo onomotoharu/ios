@@ -78,6 +78,11 @@
         int randomNum = arc4random() % i;
         [ad.quizData exchangeObjectAtIndex:i withObjectAtIndex:randomNum];
     }
+
+    for (int i = 0; i < [ad.userAnswered count]; i++) {
+        ad.userAnswered[i] = @2;
+    }
+    
     
     QuizViewController *qv = [[QuizViewController alloc]init];
     [qv setStage:@0];
